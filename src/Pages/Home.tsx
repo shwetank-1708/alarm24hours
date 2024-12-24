@@ -25,7 +25,7 @@ const Home = () => {
             Home Automation, Insurance Certificate.
           </p>
           <div className="flex gap-4">
-            <Button text="Get Free Quotes" />
+            <Button text="Get Free Quote" />
             <Button text="Contact Us" />
           </div>
         </div>
