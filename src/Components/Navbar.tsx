@@ -50,22 +50,46 @@ const Navbar = () => {
           className="text-xl cursor-pointer hover:text-sky-400"
           onClick={() => setVisible(false)}
         />
-        <NavLink to="/" className="hover:text-sky-400">
+        <NavLink
+          to="/"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>HOME</p>
         </NavLink>
-        <NavLink to="/about" className="hover:text-sky-400">
+        <NavLink
+          to="/about"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>ABOUT US</p>
         </NavLink>
-        <NavLink to="/residential" className="hover:text-sky-400">
+        <NavLink
+          to="/residential"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>RESIDENTIAL</p>
         </NavLink>
-        <NavLink to="/business" className="hover:text-sky-400">
+        <NavLink
+          to="/business"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>BUSINESS</p>
         </NavLink>
-        <NavLink to="/products" className="hover:text-sky-400">
+        <NavLink
+          to="/products"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>PRODUCTS</p>
         </NavLink>
-        <NavLink to="/resources" className="hover:text-sky-400">
+        <NavLink
+          to="/resources"
+          className="hover:text-sky-400"
+          onClick={() => setVisible(false)}
+        >
           <p>RESOURCES</p>
         </NavLink>
       </div>

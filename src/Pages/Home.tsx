@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <div>
       {/* Main Component */}
-      <div className="flex justify-center items-center p-[50px]">
-        <div className="w-[30%] flex flex-col gap-4">
-          <h1 className="text-[50px] font-bold text-[#434343]">
+      <div className="flex lg:flex-row flex-col 2xl:justify-center justify-around items-center gap-4 p-[50px]">
+        <div className="2xl:w-[30%] lg:w-[50%] sm:w-[80%] w-full flex flex-col gap-4">
+          <h1 className="sm:text-[50px] text-[30px] font-bold text-[#434343]">
             Alarm <span className="text-sky-400">Monitoring System</span> As Low
             As $15 per <span className="text-sky-400">Month</span>
           </h1>
@@ -30,13 +30,13 @@ const Home = () => {
           </div>
         </div>
 
-        <div>
+        <div className="2xl:w-[40%] lg:w-[50%] sm:w-[80%] w-full">
           <img src={home} />
         </div>
       </div>
 
       {/* Quote Component */}
-      <div className="bg-[#434343] flex justify-around items-center h-[150px]">
+      <div className="bg-[#434343] flex md:flex-row flex-col justify-around items-center h-[150px]">
         <h3 className="text-white text-2xl font-bold">
           Schedule a FREE On Site Security Assessment
         </h3>
@@ -49,7 +49,7 @@ const Home = () => {
         des="Are you Confused ? Take a look at our key feature."
       />
 
-      <div className="grid grid-cols-3 gap-10 text-center justify-center w-[1500px] mx-auto m-10">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 text-center justify-center xl:w-[80%] w-full mx-auto p-10">
         <Features
           src={technology}
           heading="Advanced Technology"
