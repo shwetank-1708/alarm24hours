@@ -22,8 +22,8 @@ const Review: React.FC<ReviewProps> = ({
         <div className="flex gap-4">
           <img src={src} className="w-[60px] rounded-full" />
           <div>
-            <h4 className="border-2 text-left font-bold">{customer_name}</h4>
-            <p className="border-2 text-left">{position}</p>
+            <h4 className="text-left font-bold">{customer_name}</h4>
+            <p className="text-left">{position}</p>
           </div>
         </div>
 

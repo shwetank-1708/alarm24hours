@@ -7,6 +7,7 @@ import Residential from "./Pages/Residential";
 import Business from "./Pages/Business";
 import Products from "./Pages/Products";
 import Resources from "./Pages/Resources";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
