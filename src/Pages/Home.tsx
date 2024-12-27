@@ -33,7 +33,7 @@ const Home = () => {
             Home Automation, Insurance Certificate.
           </p>
           <div className="flex gap-4">
-            <Button text="Get Free Quote" />
+            {/* <Button text="Get Free Quote" /> */}
             <Button text="Contact Us" />
           </div>
         </div>
@@ -44,7 +44,7 @@ const Home = () => {
       </div>
 
       {/* Quote Component */}
-      <div className="bg-[#434343] flex md:flex-row flex-col justify-around  items-center h-[150px]">
+      <div className="bg-[#434343] flex md:flex-row flex-col justify-around items-center min-h-[150px]">
         <h3 className="text-white text-2xl font-bold text-center">
           Schedule a FREE On Site Security Assessment
         </h3>

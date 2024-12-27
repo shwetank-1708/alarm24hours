@@ -95,9 +95,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#131313] text-white flex flex-row gap-4 justify-around min-h-10 items-center p-4">
+      <div className="bg-[#131313] text-white flex lg:flex-row flex-col gap-4 justify-around min-h-10 items-center p-4">
         <div>
-          <p>
+          <p className="text-center">
             2024 © All Rights Reserved Alarm 24 Hours Inc | Designed and
             Developed by Smarteyeapps.com
           </p>

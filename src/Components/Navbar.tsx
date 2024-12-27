@@ -8,7 +8,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <div className="flex lg:justify-around justify-between shadow-xl p-4 items-center">
+    <div className="flex lg:justify-around justify-between shadow-xl p-4 items-center sticky top-0 bg-white">
       <div>
         <img src={logo} className="w-[200px]" />
       </div>

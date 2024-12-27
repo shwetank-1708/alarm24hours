@@ -11,7 +11,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="font-merriweather">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
