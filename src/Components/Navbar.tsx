@@ -91,7 +91,10 @@ const Navbar = () => {
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
             <div className="flex flex-col gap-2">
-              <p className="hover:text-sky-400">CONTACT</p>
+              <NavLink to="/resources/contact">
+                {" "}
+                <p className="hover:text-sky-400">CONTACT</p>
+              </NavLink>
               <hr />
               <p className="hover:text-sky-400">BLOG</p>
               <hr />
@@ -221,7 +224,13 @@ const Navbar = () => {
 
             <div className={`p-2 ${resources ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">CONTACT</p>
+                <NavLink
+                  to="/resources/contact"
+                  onClick={() => setVisible(false)}
+                >
+                  {" "}
+                  <p className="hover:text-sky-400">CONTACT</p>
+                </NavLink>
                 <hr />
                 <p className="hover:text-sky-400">BLOG</p>
                 <hr />

@@ -4,6 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a.active {
+/* a.active {
   color: #38bdf8;
-}
+} */
