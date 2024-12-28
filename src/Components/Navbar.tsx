@@ -13,7 +13,11 @@ const Navbar = () => {
   const [resources, setResources] = useState<boolean>(false);
 
   return (
-    <div className="flex lg:justify-around justify-between shadow-xl p-4 items-center sticky top-0 bg-red-200 text-sm box-border">
+    <div
+      className={`flex lg:justify-around justify-between shadow-xl p-4 items-center top-0 text-sm box-border bg-white ${
+        visible ? "static" : "sticky"
+      }`}
+    >
       <div>
         <img src={logo} className="w-[200px]" />
       </div>
@@ -109,7 +113,7 @@ const Navbar = () => {
           visible ? "w-full" : "w-0"
         }`}
       >
-        <div className="flex flex-col gap-2 px-2">
+        <div className="flex flex-col gap-2 p-2">
           <IoClose
             className="text-xl cursor-pointer hover:text-sky-400"
             onClick={() => setVisible(false)}
@@ -130,7 +134,6 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             to="/residential"
-            className="hover:text-sky-400"
             // onClick={() => setVisible(false)}
           >
             <div
@@ -158,7 +161,6 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             to="/business"
-            className="hover:text-sky-400"
             // onClick={() => setVisible(false)}
           >
             <div
@@ -171,22 +173,17 @@ const Navbar = () => {
 
             <div className={`p-2 ${business ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <p className="hover:text-sky-400">BUSINESS SECURITY ALARM</p>
                 <hr />
-                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <p className="hover:text-sky-400">SURVEILLANCE SOLUTIONS</p>
                 <hr />
-                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
-                <hr />
-                <p className="hover:text-sky-400">ACCESS CONTROL</p>
-                <hr />
-                <p className="hover:text-sky-400">APPS</p>
+                <p className="hover:text-sky-400">BUSINESS ACCESS CONTROL</p>
                 <hr />
               </div>
             </div>
           </NavLink>
           <NavLink
             to="/products"
-            className="hover:text-sky-400"
             // onClick={() => setVisible(false)}
           >
             <div
@@ -199,22 +196,19 @@ const Navbar = () => {
 
             <div className={`p-2 ${products ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <p className="hover:text-sky-400">QOLSYS IQ PANEL 4</p>
                 <hr />
-                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <p className="hover:text-sky-400">HIKVISION</p>
                 <hr />
-                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <p className="hover:text-sky-400">ALARM.COM</p>
                 <hr />
-                <p className="hover:text-sky-400">ACCESS CONTROL</p>
-                <hr />
-                <p className="hover:text-sky-400">APPS</p>
+                <p className="hover:text-sky-400">HONEYWELL</p>
                 <hr />
               </div>
             </div>
           </NavLink>
           <NavLink
             to="/resources"
-            className="hover:text-sky-400"
             // onClick={() => setVisible(false)}
           >
             <div
@@ -227,15 +221,11 @@ const Navbar = () => {
 
             <div className={`p-2 ${resources ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <p className="hover:text-sky-400">CONTACT</p>
                 <hr />
-                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <p className="hover:text-sky-400">BLOG</p>
                 <hr />
-                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
-                <hr />
-                <p className="hover:text-sky-400">ACCESS CONTROL</p>
-                <hr />
-                <p className="hover:text-sky-400">APPS</p>
+                <p className="hover:text-sky-400">CAREERS</p>
                 <hr />
               </div>
             </div>
