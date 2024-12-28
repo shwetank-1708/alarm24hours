@@ -3,12 +3,17 @@ import logo from "../assets/logo.jpg";
 import { TiThMenu } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [visible, setVisible] = useState<boolean>(false);
+  const [residential, setResidential] = useState<boolean>(false);
+  const [business, setBusiness] = useState<boolean>(false);
+  const [products, setProducts] = useState<boolean>(false);
+  const [resources, setResources] = useState<boolean>(false);
 
   return (
-    <div className="flex lg:justify-around justify-between shadow-xl p-4 items-center sticky top-0 bg-white text-sm">
+    <div className="flex lg:justify-around justify-between shadow-xl p-4 items-center sticky top-0 bg-red-200 text-sm box-border">
       <div>
         <img src={logo} className="w-[200px]" />
       </div>
@@ -21,8 +26,9 @@ const Navbar = () => {
           <p>ABOUT US</p>
         </NavLink>
         <NavLink to="/residential" className="group relative">
-          <div>
-            <p className="hover:text-sky-400">RESIDENTIAL</p>
+          <div className="flex items-center gap-1 hover:text-sky-400">
+            <p>RESIDENTIAL</p>
+            <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
@@ -40,8 +46,9 @@ const Navbar = () => {
           </div>
         </NavLink>
         <NavLink to="/business" className="group relative">
-          <div>
-            <p className="hover:text-sky-400">BUSINESS</p>
+          <div className="flex items-center gap-1 hover:text-sky-400">
+            <p>BUSINESS</p>
+            <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
@@ -55,8 +62,9 @@ const Navbar = () => {
           </div>
         </NavLink>
         <NavLink to="/products" className="group relative">
-          <div>
-            <p className="hover:text-sky-400">PRODUCTS</p>
+          <div className="flex items-center gap-1 hover:text-sky-400">
+            <p>PRODUCTS</p>
+            <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
@@ -72,8 +80,9 @@ const Navbar = () => {
           </div>
         </NavLink>
         <NavLink to="/resources" className="group relative">
-          <div>
-            <p className="hover:text-sky-400">RESOURCES</p>
+          <div className="flex items-center gap-1 hover:text-sky-400">
+            <p>RESOURCES</p>
+            <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
@@ -96,56 +105,142 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`absolute top-0 right-0 bg-white overflow-hidden transition-all lg:hidden flex flex-col gap-2 font-bold text-[#434343] items-center shadow-2xl m-2 ${
+        className={`absolute top-0 right-0 bg-white overflow-hidden transition-all lg:hidden font-bold text-[#434343] items-left shadow-2xl ${
           visible ? "w-full" : "w-0"
         }`}
       >
-        <IoClose
-          className="text-xl cursor-pointer hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        />
-        <NavLink
-          to="/"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>HOME</p>
-        </NavLink>
-        <NavLink
-          to="/about"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>ABOUT US</p>
-        </NavLink>
-        <NavLink
-          to="/residential"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>RESIDENTIAL</p>
-        </NavLink>
-        <NavLink
-          to="/business"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>BUSINESS</p>
-        </NavLink>
-        <NavLink
-          to="/products"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>PRODUCTS</p>
-        </NavLink>
-        <NavLink
-          to="/resources"
-          className="hover:text-sky-400"
-          onClick={() => setVisible(false)}
-        >
-          <p>RESOURCES</p>
-        </NavLink>
+        <div className="flex flex-col gap-2 px-2">
+          <IoClose
+            className="text-xl cursor-pointer hover:text-sky-400"
+            onClick={() => setVisible(false)}
+          />
+          <NavLink
+            to="/"
+            className="hover:text-sky-400"
+            onClick={() => setVisible(false)}
+          >
+            <p>HOME</p>
+          </NavLink>
+          <NavLink
+            to="/about"
+            className="hover:text-sky-400"
+            onClick={() => setVisible(false)}
+          >
+            <p>ABOUT US</p>
+          </NavLink>
+          <NavLink
+            to="/residential"
+            className="hover:text-sky-400"
+            // onClick={() => setVisible(false)}
+          >
+            <div
+              className="flex items-center gap-1 hover:text-sky-400"
+              onClick={() => setResidential(!residential)}
+            >
+              <p>RESIDENTIAL</p>
+              <FaAngleDown />
+            </div>
+
+            <div className={`p-2 ${residential ? "block" : "hidden"}`}>
+              <div className="flex flex-col gap-2">
+                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <hr />
+                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <hr />
+                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <hr />
+                <p className="hover:text-sky-400">ACCESS CONTROL</p>
+                <hr />
+                <p className="hover:text-sky-400">APPS</p>
+                <hr />
+              </div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/business"
+            className="hover:text-sky-400"
+            // onClick={() => setVisible(false)}
+          >
+            <div
+              className="flex items-center gap-1 hover:text-sky-400"
+              onClick={() => setBusiness(!business)}
+            >
+              <p>BUSINESS</p>
+              <FaAngleDown />
+            </div>
+
+            <div className={`p-2 ${business ? "block" : "hidden"}`}>
+              <div className="flex flex-col gap-2">
+                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <hr />
+                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <hr />
+                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <hr />
+                <p className="hover:text-sky-400">ACCESS CONTROL</p>
+                <hr />
+                <p className="hover:text-sky-400">APPS</p>
+                <hr />
+              </div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/products"
+            className="hover:text-sky-400"
+            // onClick={() => setVisible(false)}
+          >
+            <div
+              className="flex items-center gap-1 hover:text-sky-400"
+              onClick={() => setProducts(!products)}
+            >
+              <p>PRODUCTS</p>
+              <FaAngleDown />
+            </div>
+
+            <div className={`p-2 ${products ? "block" : "hidden"}`}>
+              <div className="flex flex-col gap-2">
+                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <hr />
+                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <hr />
+                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <hr />
+                <p className="hover:text-sky-400">ACCESS CONTROL</p>
+                <hr />
+                <p className="hover:text-sky-400">APPS</p>
+                <hr />
+              </div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/resources"
+            className="hover:text-sky-400"
+            // onClick={() => setVisible(false)}
+          >
+            <div
+              className="flex items-center gap-1 hover:text-sky-400"
+              onClick={() => setResources(!resources)}
+            >
+              <p>RESOURCES</p>
+              <FaAngleDown />
+            </div>
+
+            <div className={`p-2 ${resources ? "block" : "hidden"}`}>
+              <div className="flex flex-col gap-2">
+                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <hr />
+                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <hr />
+                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <hr />
+                <p className="hover:text-sky-400">ACCESS CONTROL</p>
+                <hr />
+                <p className="hover:text-sky-400">APPS</p>
+                <hr />
+              </div>
+            </div>
+          </NavLink>
+        </div>
       </div>
     </div>
   );
