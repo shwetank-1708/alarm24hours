@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
           </div>
         </NavLink>
-        <NavLink to="/resources" className="group relative">
+        <div className="group relative cursor-pointer">
           <div className="flex items-center gap-1 hover:text-sky-400">
             <p>RESOURCES</p>
             <FaAngleDown />
@@ -91,9 +91,9 @@ const Navbar = () => {
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
             <div className="flex flex-col gap-2">
-              <NavLink to="/resources/contact">
+              <NavLink to="/resources/contact" className="hover:text-sky-400">
                 {" "}
-                <p className="hover:text-sky-400">CONTACT</p>
+                CONTACT
               </NavLink>
               <hr />
               <p className="hover:text-sky-400">BLOG</p>
@@ -101,7 +101,7 @@ const Navbar = () => {
               <p className="hover:text-sky-400">CAREERS</p>
             </div>
           </div>
-        </NavLink>
+        </div>
       </div>
 
       <div className="text-xl lg:hidden">
@@ -116,7 +116,7 @@ const Navbar = () => {
           visible ? "w-full" : "w-0"
         }`}
       >
-        <div className="flex flex-col gap-2 p-2">
+        <div className="flex flex-col gap-4 p-2 min-h-[100vh]">
           <IoClose
             className="text-xl cursor-pointer hover:text-sky-400"
             onClick={() => setVisible(false)}
@@ -210,12 +210,11 @@ const Navbar = () => {
               </div>
             </div>
           </NavLink>
-          <NavLink
-            to="/resources"
-            // onClick={() => setVisible(false)}
+          <div
+          // onClick={() => setVisible(false)}
           >
             <div
-              className="flex items-center gap-1 hover:text-sky-400"
+              className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
               onClick={() => setResources(!resources)}
             >
               <p>RESOURCES</p>
@@ -227,9 +226,10 @@ const Navbar = () => {
                 <NavLink
                   to="/resources/contact"
                   onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
                 >
                   {" "}
-                  <p className="hover:text-sky-400">CONTACT</p>
+                  CONTACT
                 </NavLink>
                 <hr />
                 <p className="hover:text-sky-400">BLOG</p>
@@ -238,7 +238,7 @@ const Navbar = () => {
                 <hr />
               </div>
             </div>
-          </NavLink>
+          </div>
         </div>
       </div>
     </div>
