@@ -27,7 +27,7 @@ const Contact = () => {
     console.log("Message:", values.message);
 
     await axios
-      .post("https://alarm24hours-backend.onrender.com/api/v1/post", values)
+      .post("http://localhost:5000/api/v1/post", values)
       .then((res) => {
         console.log(res);
       });
