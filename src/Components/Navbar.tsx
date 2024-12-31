@@ -29,7 +29,7 @@ const Navbar = () => {
         <NavLink to="/about" className="hover:text-sky-400">
           <p>ABOUT US</p>
         </NavLink>
-        <NavLink to="/residential" className="group relative">
+        <div className="group relative cursor-pointer">
           <div className="flex items-center gap-1 hover:text-sky-400">
             <p>RESIDENTIAL</p>
             <FaAngleDown />
@@ -37,18 +37,42 @@ const Navbar = () => {
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
             <div className="flex flex-col gap-2">
-              <p className="hover:text-sky-400">HOME SECURITY</p>
+              {/* <p className="hover:text-sky-400">HOME SECURITY</p> */}
+              <NavLink
+                to="/residential/home_security"
+                className="hover:text-sky-400"
+              >
+                {" "}
+                HOME SECURITY
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">VIDEO MONITORING</p>
+              <NavLink
+                to="/residential/video_monitoring"
+                className="hover:text-sky-400"
+              >
+                VIDEO MONITORING
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+              <NavLink
+                to="/residential/energy_management"
+                className="hover:text-sky-400"
+              >
+                ENERGY MANAGEMENT
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">ACCESS CONTROL</p>
+              <NavLink
+                to="/residential/access_control"
+                className="hover:text-sky-400"
+              >
+                ACCESS CONTROL
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">APPS</p>
+              <NavLink to="/residential/apps" className="hover:text-sky-400">
+                APPS
+              </NavLink>
             </div>
           </div>
-        </NavLink>
+        </div>
         <NavLink to="/business" className="group relative">
           <div className="flex items-center gap-1 hover:text-sky-400">
             <p>BUSINESS</p>
@@ -141,7 +165,12 @@ const Navbar = () => {
           >
             <div
               className="flex items-center gap-1 hover:text-sky-400"
-              onClick={() => setResidential(!residential)}
+              onClick={() => {
+                setResidential(!residential);
+                setBusiness(false);
+                setProducts(false);
+                setResources(false);
+              }}
             >
               <p>RESIDENTIAL</p>
               <FaAngleDown />
@@ -168,7 +197,12 @@ const Navbar = () => {
           >
             <div
               className="flex items-center gap-1 hover:text-sky-400"
-              onClick={() => setBusiness(!business)}
+              onClick={() => {
+                setBusiness(!business);
+                setResidential(false);
+                setProducts(false);
+                setResources(false);
+              }}
             >
               <p>BUSINESS</p>
               <FaAngleDown />
@@ -191,7 +225,12 @@ const Navbar = () => {
           >
             <div
               className="flex items-center gap-1 hover:text-sky-400"
-              onClick={() => setProducts(!products)}
+              onClick={() => {
+                setProducts(!products);
+                setResidential(false);
+                setBusiness(false);
+                setResources(false);
+              }}
             >
               <p>PRODUCTS</p>
               <FaAngleDown />
@@ -215,7 +254,12 @@ const Navbar = () => {
           >
             <div
               className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
-              onClick={() => setResources(!resources)}
+              onClick={() => {
+                setResources(!resources);
+                setResidential(false);
+                setBusiness(false);
+                setProducts(false);
+              }}
             >
               <p>RESOURCES</p>
               <FaAngleDown />

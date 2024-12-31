@@ -3,12 +3,15 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Residential from "./Pages/Residential";
 import Business from "./Pages/Business";
 import Products from "./Pages/Products";
-import Resources from "./Pages/Resources";
 import Footer from "./Components/Footer";
-import Contact from "./Components/Contact";
+import Contact from "./Pages/Contact";
+import HomeSecurity from "./Pages/HomeSecurity";
+import VideoMonitoring from "./Pages/VideoMonitoring";
+import EnergyManagement from "./Pages/EnergyManagement";
+import AccessControl from "./Pages/AccessControl";
+import Apps from "./Pages/Apps";
 
 function App() {
   return (
@@ -17,10 +20,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/residential" element={<Residential />} />
+        <Route path="/residential/home_security" element={<HomeSecurity />} />
+        <Route
+          path="/residential/video_monitoring"
+          element={<VideoMonitoring />}
+        />
+        <Route
+          path="/residential/energy_management"
+          element={<EnergyManagement />}
+        />
+        <Route path="/residential/access_control" element={<AccessControl />} />
+        <Route path="/residential/apps" element={<Apps />} />
         <Route path="/business" element={<Business />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/resources" element={<Resources />} />
         <Route path="/resources/contact" element={<Contact />} />
       </Routes>
       <Footer />
