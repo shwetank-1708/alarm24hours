@@ -463,7 +463,7 @@ const Navbar = () => {
                 <NavLink
                   to="/resources/contact"
                   onClick={() => {
-                    setVisible(false);
+                    toggleNavbar(false);
                     setResources(false);
                   }}
                   className="hover:text-sky-400"
@@ -475,7 +475,7 @@ const Navbar = () => {
                 <NavLink
                   to="/resources/blog"
                   onClick={() => {
-                    setVisible(false);
+                    toggleNavbar(false);
                     setResources(false);
                   }}
                   className="hover:text-sky-400"
@@ -487,7 +487,7 @@ const Navbar = () => {
                 <NavLink
                   to="/resources/careers"
                   onClick={() => {
-                    setVisible(false);
+                    toggleNavbar(false);
                     setResources(false);
                   }}
                   className="hover:text-sky-400"
