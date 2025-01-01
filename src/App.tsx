@@ -19,10 +19,12 @@ import AlarmDotCom from "./Pages/AlarmDotCom";
 import Honeywell from "./Pages/Honeywell";
 import Blog from "./Pages/Blog";
 import Careers from "./Pages/Careers";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <div className="font-merriweather">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

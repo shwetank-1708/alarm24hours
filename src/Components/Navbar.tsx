@@ -12,6 +12,15 @@ const Navbar = () => {
   const [products, setProducts] = useState<boolean>(false);
   const [resources, setResources] = useState<boolean>(false);
 
+  const toggleNavbar = (isVisible: boolean) => {
+    setVisible(isVisible);
+    if (isVisible) {
+      document.body.style.overflow = "hidden"; // Prevent page scroll
+    } else {
+      document.body.style.overflow = ""; // Restore page scroll
+    }
+  };
+
   return (
     <div
       className={`flex lg:justify-around justify-between shadow-xl p-4 items-center top-0 text-sm box-border bg-white ${
@@ -175,14 +184,15 @@ const Navbar = () => {
       {/* Desktop Navbar - Hamburger Menu */}
       <div className="text-xl lg:hidden">
         <TiThMenu
-          onClick={() => setVisible(true)}
+          // onClick={() => setVisible(true)}
+          onClick={() => toggleNavbar(true)}
           className="cursor-pointer hover:text-sky-400"
         />
       </div>
 
       {/* Mobile Navbar */}
       <div
-        className={`absolute top-0 right-0 bg-white overflow-hidden transition-all lg:hidden font-bold text-[#434343] items-left shadow-2xl ${
+        className={`fixed top-0 right-0 bg-white h-screen overflow-y-auto transition-all lg:hidden font-bold text-[#434343] shadow-2xl ${
           visible ? "w-full" : "w-0"
         }`}
       >
@@ -190,14 +200,16 @@ const Navbar = () => {
           {/* Close Icon */}
           <IoClose
             className="text-xl cursor-pointer hover:text-sky-400"
-            onClick={() => setVisible(false)}
+            // onClick={() => setVisible(false)}
+            onClick={() => toggleNavbar(false)}
           />
 
           {/* Mobile Navbar - Home */}
           <NavLink
             to="/"
             className="hover:text-sky-400"
-            onClick={() => setVisible(false)}
+            // onClick={() => setVisible(false)}
+            onClick={() => toggleNavbar(false)}
           >
             <p>HOME</p>
           </NavLink>
@@ -206,18 +218,16 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className="hover:text-sky-400"
-            onClick={() => setVisible(false)}
+            // onClick={() => setVisible(false)}
+            onClick={() => toggleNavbar(false)}
           >
             <p>ABOUT US</p>
           </NavLink>
 
           {/* Mobile Navbar - Residential */}
-          <NavLink
-            to="/residential"
-            // onClick={() => setVisible(false)}
-          >
+          <div>
             <div
-              className="flex items-center gap-1 hover:text-sky-400"
+              className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
               onClick={() => {
                 setResidential(!residential);
                 setBusiness(false);
@@ -231,27 +241,64 @@ const Navbar = () => {
 
             <div className={`p-2 ${residential ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">HOME SECURITY</p>
+                <NavLink
+                  to="/residential/home_security"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  HOME SECURITY
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">VIDEO MONITORING</p>
+                <NavLink
+                  to="/residential/video_monitoring"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  VIDEO MONITORING
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">ENERGY MANAGEMENT</p>
+                <NavLink
+                  to="/residential/energy_management"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  ENERGY MANAGEMENT
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">ACCESS CONTROL</p>
+                <NavLink
+                  to="/residential/access_control"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  ACCESS CONTROL
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">APPS</p>
+                <NavLink
+                  to="/residential/apps"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  APPS
+                </NavLink>
                 <hr />
               </div>
             </div>
-          </NavLink>
+          </div>
 
           {/* Mobile Navbar - Business */}
-          <NavLink
-            to="/business"
-            // onClick={() => setVisible(false)}
-          >
+          <div>
             <div
-              className="flex items-center gap-1 hover:text-sky-400"
+              className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
               onClick={() => {
                 setBusiness(!business);
                 setResidential(false);
@@ -265,23 +312,44 @@ const Navbar = () => {
 
             <div className={`p-2 ${business ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">BUSINESS SECURITY ALARM</p>
+                <NavLink
+                  to="/business/business_security_alarm"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  BUSINESS SECURITY ALARM
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">SURVEILLANCE SOLUTIONS</p>
+                <NavLink
+                  to="/business/surveillance_solutions"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  SURVEILLANCE SOLUTIONS
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">BUSINESS ACCESS CONTROL</p>
+                <NavLink
+                  to="/business/business_access_control"
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  BUSINESS ACCESS CONTROL
+                </NavLink>
                 <hr />
               </div>
             </div>
-          </NavLink>
+          </div>
 
           {/* Mobile Navbar - Products */}
-          <NavLink
-            to="/products"
-            // onClick={() => setVisible(false)}
-          >
+          <div>
             <div
-              className="flex items-center gap-1 hover:text-sky-400"
+              className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
               onClick={() => {
                 setProducts(!products);
                 setResidential(false);
@@ -297,7 +365,8 @@ const Navbar = () => {
               <div className="flex flex-col gap-2">
                 <NavLink
                   to="/products/qolsys"
-                  onClick={() => setVisible(false)}
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -306,7 +375,8 @@ const Navbar = () => {
                 <hr />
                 <NavLink
                   to="/products/hikvision"
-                  onClick={() => setVisible(false)}
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -315,7 +385,8 @@ const Navbar = () => {
                 <hr />
                 <NavLink
                   to="/products/alarmdotcom"
-                  onClick={() => setVisible(false)}
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -324,7 +395,8 @@ const Navbar = () => {
                 <hr />
                 <NavLink
                   to="/products/honeywell"
-                  onClick={() => setVisible(false)}
+                  // onClick={() => setVisible(false)}
+                  onClick={() => toggleNavbar(false)}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -333,12 +405,10 @@ const Navbar = () => {
                 <hr />
               </div>
             </div>
-          </NavLink>
+          </div>
 
           {/* Mobile Navbar - Resources */}
-          <div
-          // onClick={() => setVisible(false)}
-          >
+          <div>
             <div
               className="flex items-center gap-1 hover:text-sky-400 cursor-pointer"
               onClick={() => {
