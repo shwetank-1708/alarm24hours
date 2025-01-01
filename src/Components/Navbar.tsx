@@ -22,15 +22,21 @@ const Navbar = () => {
         <img src={logo} className="w-[200px]" />
       </div>
 
+      {/* Desktop Navbar */}
       <div className="hidden lg:flex gap-4 items-center font-bold text-[#434343]">
+        {/* Desktop Navbar - Home */}
         <NavLink to="/" className="hover:text-sky-400">
           <p>HOME</p>
         </NavLink>
+
+        {/* Desktop Navbar - About */}
         <NavLink to="/about" className="hover:text-sky-400">
           <p>ABOUT US</p>
         </NavLink>
-        <div className="group relative cursor-pointer">
-          <div className="flex items-center gap-1 hover:text-sky-400">
+
+        {/* Desktop Navbar - Residential */}
+        <div className="group relative">
+          <div className="flex items-center gap-1 hover:text-sky-400 cursor-pointer">
             <p>RESIDENTIAL</p>
             <FaAngleDown />
           </div>
@@ -73,42 +79,74 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <NavLink to="/business" className="group relative">
-          <div className="flex items-center gap-1 hover:text-sky-400">
+
+        {/* Desktop Navbar - Business */}
+        <div className="group relative">
+          <div className="flex items-center gap-1 hover:text-sky-400 cursor-pointer">
             <p>BUSINESS</p>
             <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
             <div className="flex flex-col gap-2">
-              <p className="hover:text-sky-400">BUSINESS SECURITY ALARM</p>
+              <NavLink
+                to="/business/business_security_alarm"
+                className="hover:text-sky-400"
+              >
+                BUSINESS SECURITY ALARM
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">SURVEILLANCE SOLUTIONS</p>
+              <NavLink
+                to="/business/surveillance_solutions"
+                className="hover:text-sky-400"
+              >
+                SURVEILLANCE SOLUTIONS
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">BUSINESS ACCESS CONTROL</p>
+              <NavLink
+                to="/business/business_access_control"
+                className="hover:text-sky-400"
+              >
+                BUSINESS ACCESS CONTROL
+              </NavLink>
             </div>
           </div>
-        </NavLink>
-        <NavLink to="/products" className="group relative">
-          <div className="flex items-center gap-1 hover:text-sky-400">
+        </div>
+
+        {/* Desktop Navbar - Products */}
+        <div className="group relative">
+          <div className="flex items-center gap-1 hover:text-sky-400 cursor-pointer">
             <p>PRODUCTS</p>
             <FaAngleDown />
           </div>
 
           <div className="group-hover:block hidden absolute dropdown-menu bg-white w-[250px] left-[-15px] top-5 p-4 shadow-2xl">
             <div className="flex flex-col gap-2">
-              <p className="hover:text-sky-400">QOLSYS IQ PANEL 4</p>
+              <NavLink to="/products/qolsys" className="hover:text-sky-400">
+                QOLSYS IQ PANEL 4
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">HIKVISION</p>
+              <NavLink to="/products/hikvision" className="hover:text-sky-400">
+                HIKVISION
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">ALARM.COM</p>
+              <NavLink
+                to="/products/alarmdotcom"
+                className="hover:text-sky-400"
+              >
+                ALARM.COM
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">HONEYWELL</p>
+              <NavLink to="/products/honeywell" className="hover:text-sky-400">
+                HONEYWELL
+              </NavLink>
             </div>
           </div>
-        </NavLink>
-        <div className="group relative cursor-pointer">
-          <div className="flex items-center gap-1 hover:text-sky-400">
+        </div>
+
+        {/* Desktop Navbar - Resources */}
+        <div className="group relative">
+          <div className="flex items-center gap-1 hover:text-sky-400 cursor-pointer">
             <p>RESOURCES</p>
             <FaAngleDown />
           </div>
@@ -120,14 +158,21 @@ const Navbar = () => {
                 CONTACT
               </NavLink>
               <hr />
-              <p className="hover:text-sky-400">BLOG</p>
+              <NavLink to="/resources/blog" className="hover:text-sky-400">
+                {" "}
+                BLOG
+              </NavLink>
               <hr />
-              <p className="hover:text-sky-400">CAREERS</p>
+              <NavLink to="/resources/careers" className="hover:text-sky-400">
+                {" "}
+                CAREERS
+              </NavLink>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Desktop Navbar - Hamburger Menu */}
       <div className="text-xl lg:hidden">
         <TiThMenu
           onClick={() => setVisible(true)}
@@ -135,16 +180,20 @@ const Navbar = () => {
         />
       </div>
 
+      {/* Mobile Navbar */}
       <div
         className={`absolute top-0 right-0 bg-white overflow-hidden transition-all lg:hidden font-bold text-[#434343] items-left shadow-2xl ${
           visible ? "w-full" : "w-0"
         }`}
       >
         <div className="flex flex-col gap-4 p-2 min-h-[100vh]">
+          {/* Close Icon */}
           <IoClose
             className="text-xl cursor-pointer hover:text-sky-400"
             onClick={() => setVisible(false)}
           />
+
+          {/* Mobile Navbar - Home */}
           <NavLink
             to="/"
             className="hover:text-sky-400"
@@ -152,6 +201,8 @@ const Navbar = () => {
           >
             <p>HOME</p>
           </NavLink>
+
+          {/* Mobile Navbar- About */}
           <NavLink
             to="/about"
             className="hover:text-sky-400"
@@ -159,6 +210,8 @@ const Navbar = () => {
           >
             <p>ABOUT US</p>
           </NavLink>
+
+          {/* Mobile Navbar - Residential */}
           <NavLink
             to="/residential"
             // onClick={() => setVisible(false)}
@@ -191,6 +244,8 @@ const Navbar = () => {
               </div>
             </div>
           </NavLink>
+
+          {/* Mobile Navbar - Business */}
           <NavLink
             to="/business"
             // onClick={() => setVisible(false)}
@@ -219,6 +274,8 @@ const Navbar = () => {
               </div>
             </div>
           </NavLink>
+
+          {/* Mobile Navbar - Products */}
           <NavLink
             to="/products"
             // onClick={() => setVisible(false)}
@@ -238,17 +295,47 @@ const Navbar = () => {
 
             <div className={`p-2 ${products ? "block" : "hidden"}`}>
               <div className="flex flex-col gap-2">
-                <p className="hover:text-sky-400">QOLSYS IQ PANEL 4</p>
+                <NavLink
+                  to="/products/qolsys"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  QOLSYS IQ PANEL 4
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">HIKVISION</p>
+                <NavLink
+                  to="/products/hikvision"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  HIKVISION
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">ALARM.COM</p>
+                <NavLink
+                  to="/products/alarmdotcom"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  ALARM.COM
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">HONEYWELL</p>
+                <NavLink
+                  to="/products/honeywell"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  HONEYWELL
+                </NavLink>
                 <hr />
               </div>
             </div>
           </NavLink>
+
+          {/* Mobile Navbar - Resources */}
           <div
           // onClick={() => setVisible(false)}
           >
@@ -276,9 +363,23 @@ const Navbar = () => {
                   CONTACT
                 </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">BLOG</p>
+                <NavLink
+                  to="/resources/blog"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  BLOG
+                </NavLink>
                 <hr />
-                <p className="hover:text-sky-400">CAREERS</p>
+                <NavLink
+                  to="/resources/careers"
+                  onClick={() => setVisible(false)}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  CAREERS
+                </NavLink>
                 <hr />
               </div>
             </div>

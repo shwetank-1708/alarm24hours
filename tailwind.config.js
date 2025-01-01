@@ -7,7 +7,7 @@ export default {
         custom: "0 0 20px 10px rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
-        merriweather: ["Merriweather", "serif"],
+        Montserrat: ["Montserrat", "serif"],
       },
     },
   },
