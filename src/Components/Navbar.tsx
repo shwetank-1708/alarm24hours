@@ -244,7 +244,10 @@ const Navbar = () => {
                 <NavLink
                   to="/residential/home_security"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResidential(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -254,7 +257,10 @@ const Navbar = () => {
                 <NavLink
                   to="/residential/video_monitoring"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResidential(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -264,7 +270,10 @@ const Navbar = () => {
                 <NavLink
                   to="/residential/energy_management"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResidential(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -274,7 +283,10 @@ const Navbar = () => {
                 <NavLink
                   to="/residential/access_control"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResidential(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -284,7 +296,10 @@ const Navbar = () => {
                 <NavLink
                   to="/residential/apps"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResidential(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -315,7 +330,10 @@ const Navbar = () => {
                 <NavLink
                   to="/business/business_security_alarm"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setBusiness(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -325,7 +343,10 @@ const Navbar = () => {
                 <NavLink
                   to="/business/surveillance_solutions"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setBusiness(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -335,7 +356,10 @@ const Navbar = () => {
                 <NavLink
                   to="/business/business_access_control"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setBusiness(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -366,7 +390,10 @@ const Navbar = () => {
                 <NavLink
                   to="/products/qolsys"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setProducts(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -376,7 +403,10 @@ const Navbar = () => {
                 <NavLink
                   to="/products/hikvision"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setProducts(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -386,7 +416,10 @@ const Navbar = () => {
                 <NavLink
                   to="/products/alarmdotcom"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setProducts(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -396,7 +429,10 @@ const Navbar = () => {
                 <NavLink
                   to="/products/honeywell"
                   // onClick={() => setVisible(false)}
-                  onClick={() => toggleNavbar(false)}
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setProducts(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -426,7 +462,10 @@ const Navbar = () => {
               <div className="flex flex-col gap-2">
                 <NavLink
                   to="/resources/contact"
-                  onClick={() => setVisible(false)}
+                  onClick={() => {
+                    setVisible(false);
+                    setResources(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -435,7 +474,10 @@ const Navbar = () => {
                 <hr />
                 <NavLink
                   to="/resources/blog"
-                  onClick={() => setVisible(false)}
+                  onClick={() => {
+                    setVisible(false);
+                    setResources(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
@@ -444,7 +486,10 @@ const Navbar = () => {
                 <hr />
                 <NavLink
                   to="/resources/careers"
-                  onClick={() => setVisible(false)}
+                  onClick={() => {
+                    setVisible(false);
+                    setResources(false);
+                  }}
                   className="hover:text-sky-400"
                 >
                   {" "}
