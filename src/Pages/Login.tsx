@@ -57,13 +57,13 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-black text-white px-4 py-2 rounded-full text-xl w-[150px]"
+            className="bg-black text-white px-4 py-2 rounded-full text-xl w-[150px] hover:bg-[#434343]"
           >
             Login
           </button>
         </form>
 
-        <NavLink to="/signup" className="text-center">
+        <NavLink to="/resources/signup" className="text-center">
           Don't have an account? Sign Up here.
         </NavLink>
       </div>

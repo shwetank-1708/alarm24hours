@@ -176,6 +176,16 @@ const Navbar = () => {
                 {" "}
                 CAREERS
               </NavLink>
+              <hr />
+              <NavLink to="/resources/login" className="hover:text-sky-400">
+                {" "}
+                LOGIN
+              </NavLink>
+              <hr />
+              <NavLink to="/resources/signup" className="hover:text-sky-400">
+                {" "}
+                SIGNUP
+              </NavLink>
             </div>
           </div>
         </div>
@@ -494,6 +504,30 @@ const Navbar = () => {
                 >
                   {" "}
                   CAREERS
+                </NavLink>
+                <hr />
+                <NavLink
+                  to="/resources/login"
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResources(false);
+                  }}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  LOGIN
+                </NavLink>
+                <hr />
+                <NavLink
+                  to="/resources/signup"
+                  onClick={() => {
+                    toggleNavbar(false);
+                    setResources(false);
+                  }}
+                  className="hover:text-sky-400"
+                >
+                  {" "}
+                  SIGNUP
                 </NavLink>
                 <hr />
               </div>

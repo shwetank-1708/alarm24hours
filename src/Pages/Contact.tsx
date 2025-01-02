@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-10 m-10">
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-10 m-10 text-[#434343] font-bold">
       <h2 className="font-bold text-2xl">Contact Form</h2>
       <form
         className="flex flex-col gap-8 xl:w-[25%] md:w-[40%] sm:w-[60%] w-[90%]"

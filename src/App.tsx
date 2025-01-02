@@ -61,8 +61,8 @@ function App() {
         <Route path="/resources/contact" element={<Contact />} />
         <Route path="/resources/blog" element={<Blog />} />
         <Route path="/resources/careers" element={<Careers />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/resources/login" element={<Login />} />
+        <Route path="/resources/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>

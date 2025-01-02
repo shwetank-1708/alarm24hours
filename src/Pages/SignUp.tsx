@@ -86,13 +86,13 @@ const SingUp = () => {
           </div>
           <button
             type="submit"
-            className="bg-black text-white px-4 py-2 rounded-full text-xl inline-block w-[150px]"
+            className="bg-black text-white px-4 py-2 rounded-full text-xl inline-block w-[150px] hover:bg-[#434343]"
           >
             Sign Up
           </button>
         </form>
 
-        <NavLink to="/login" className="text-center">
+        <NavLink to="/resources/login" className="text-center">
           Already have an account? Login here.
         </NavLink>
       </div>
