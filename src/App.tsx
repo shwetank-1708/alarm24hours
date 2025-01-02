@@ -20,6 +20,8 @@ import Honeywell from "./Pages/Honeywell";
 import Blog from "./Pages/Blog";
 import Careers from "./Pages/Careers";
 import ScrollToTop from "./Components/ScrollToTop";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
         <Route path="/resources/contact" element={<Contact />} />
         <Route path="/resources/blog" element={<Blog />} />
         <Route path="/resources/careers" element={<Careers />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>
