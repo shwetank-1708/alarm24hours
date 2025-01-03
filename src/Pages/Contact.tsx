@@ -26,8 +26,16 @@ const Contact = () => {
     console.log("ContactNum:", values.contactNum);
     console.log("Message:", values.message);
 
+    setValues({
+      name: "",
+      email: "",
+      contactNum: "",
+      message: "",
+    });
+
     await axios
-      .post("http://localhost:5000/api/v1/post", values)
+      // .post("http://localhost:5000/contact/post", values)
+      .post("https://alarm24hours-backend.onrender.com/contact/post", values)
       .then((res) => {
         console.log(res);
       });

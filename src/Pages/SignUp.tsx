@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { FormEvent, useState } from "react";
+import axios from "axios";
 
-const SingUp = () => {
+const SignUp = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -17,15 +18,29 @@ const SingUp = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log(values.name);
     console.log(values.email);
     console.log(values.password);
     console.log(values.confirmPassword);
 
+    setValues({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+
     if (values.password !== values.confirmPassword) {
       alert("Password do not match");
+    } else {
+      await axios
+        //   .post("http://localhost:5000/signup/post", values)
+        .post("https://alarm24hours-backend.onrender.com/signup/post", values)
+        .then((res) => {
+          console.log(res);
+        });
     }
   };
 
@@ -80,7 +95,7 @@ const SingUp = () => {
               onChange={handleChange}
               required
               type="password"
-              placeholder="Enter Your Password"
+              placeholder="Confirm Your Password"
               className="p-4 w-[100%] focus:outline-none rounded-xl text-xl"
             ></input>
           </div>
@@ -100,4 +115,4 @@ const SingUp = () => {
   );
 };
 
-export default SingUp;
+export default SignUp;
